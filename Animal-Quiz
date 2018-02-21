@@ -1,0 +1,35 @@
+# Assuming you read the readme file, here's the animal quiz code.
+
+def check_guess(guess, answer):
+    global score
+    still_guessing = True
+    attempt = 0
+    while still_guessing and attempt < 3:
+        if guess.lower() == answer.lower():
+            print('Correct Answer!')
+            score = score + 1
+            still_guessing = False
+        else:
+            if attempt < 2:
+                guess = input('Sorry, wrong answer. Try again. ')
+            attempt = attempt + 1
+
+    if attempt == 3:
+        print('The correct answer is ' + answer)
+
+score = 0
+
+print('Guess the Animal!')
+prompt1 = ("Which bear lives at the North pole?")
+check_guess(prompt1, 'polar bear')
+prompt2 = ('Which is the fastest land animal? ')
+check_guess(prompt2, 'cheetah')
+prompt3 = ('Which is the largest animal? ')
+check_guess(prompt3, 'blue whale')
+prompt4 = ('What is the smallest bird? ')
+check_guess(prompt4, 'bee hummingbird')
+prompt5 = ('Which is the most adorable sea creature?')
+check_guess(prompt5, 'adorabilis')
+
+print('Quiz completed!')
+print('Your total score is ' + str(score)'!')
